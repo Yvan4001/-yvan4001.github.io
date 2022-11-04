@@ -24,6 +24,7 @@ images.forEach(item =>
 function dragStart(e, item)
 { 
     dragItem = e.target;
+    dragItem.style.opacity = '0.4';
 }
 
 function dragEnd(e, item)
