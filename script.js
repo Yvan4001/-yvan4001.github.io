@@ -3,7 +3,8 @@ let items = document.querySelectorAll('#tier-row');
 let dragItem;
 let lastDragItem;
 let tempDragItem = document.createElement('div');
-document.querySelector('.tier-list').append(tempDragItem);
+let i = document.querySelector('div#tier-list');
+i.append(tempDragItem);
 tempDragItem.setAttribute('draggable', true);
 
 items.forEach(item =>
