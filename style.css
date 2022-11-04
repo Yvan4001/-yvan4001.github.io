@@ -41,6 +41,13 @@ img {
     color: #ffffff;
 }
 
+@media (max-width: 1400px) {
+    .container {
+        width: calc(100% - 16px);
+        padding: 24px 8px;
+    }
+}
+
 h1 {
     margin: 0;
     text-align: center;
