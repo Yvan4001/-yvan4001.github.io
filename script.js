@@ -1,5 +1,12 @@
 let items = document.querySelectorAll('#tier-row');
 
+let images = document.querySelectorAll('img');
+
+images.forEach(img =>
+{
+    img.setAttribute('draggable', true);
+});
+
 let dragItem;
 let lastDragItem;
 let tempDragItem = document.createElement('div');
