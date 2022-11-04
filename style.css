@@ -2,8 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 16px;
+    position: relative;
+    background: url(images/fond.jpg) no-repeat fixed center center #25345c;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+body:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    opacity: 0.8;
+    background: #25345c;
+}
+
+body * {
+    position: relative;
 }
 
 img {
@@ -12,13 +31,29 @@ img {
     margin: 1px;
 }
 
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
 /*** ZONE TIER LIST ***/
 
 #tier-list {
     border-collapse: collapse;
     width: 100%;
     margin: 24px auto;
-    border: 1px solid black;
+    border: 1px solid #000000;
+    color: #000000;
 }
 
 /* Lignes */
@@ -62,6 +97,10 @@ img {
     background-color: #bfff7f;
 }
 
+.tier-row:nth-child(6) .tier-label {
+    background-color: #ffffff;
+}
+
 .tier-row:last-child .tier-label {
     background-color: #dddddd;
 }
@@ -82,5 +121,5 @@ img {
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    margin: 24px auto;
+    margin: 24px auto 0;
 }
