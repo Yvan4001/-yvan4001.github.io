@@ -50,5 +50,5 @@ function dragOver(e, item)
 
 function dragLeave(e, item)
 { 
-    e.target.style.backgroundColor = 'white';
+    e.target.style.backgroundColor = '';
 }
