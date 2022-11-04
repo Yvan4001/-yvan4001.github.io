@@ -1,0 +1,45 @@
+/*** GENERAL ***/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+}
+
+/*** ZONE TIER LIST ***/
+
+#tier-list {
+    border: 1px solid black;
+}
+
+/* Lignes */
+.tier-row {
+    display: flex;
+}
+.tier-row:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+/* Labels */
+.tier-label {
+    border-right: 1px solid black;
+    min-height: 80px;
+    width: 100%;
+    max-width: 80px;
+    text-align: center;
+}
+
+/* Tiers */
+.tier {
+
+}
+
+/*** ZONE LISTE PERSO ***/
+#list-character {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#list-character img {
+    width: 80px;
+    height: 80px;
+}
