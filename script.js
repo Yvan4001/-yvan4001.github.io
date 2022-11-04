@@ -1,5 +1,6 @@
 let items = document.querySelectorAll('.tier');
 let images = document.querySelectorAll('img');
+let img = document.createElement('img');
 
 images.forEach(img =>
 {
@@ -48,8 +49,8 @@ function dragEnd(e, item)
 function dragOver(e, item)
 {
     lastDragItem = e.target;
-    let img = document.createElement('img');
-    img.src = lastDragItem.getAttribute('src');
+    img.src = dragItem.getAttribute('src');
+    img.opacity = '0.5';
     e.target.appendChild(img);
 }
 
@@ -57,4 +58,5 @@ function dragOver(e, item)
 function dragLeave(e, item)
 { 
     e.target.style.backgroundColor = '';
+    img.src = '';
 }
