@@ -38,10 +38,11 @@ function dragOver(e)
 {
     if (e.target.className == 'tier' || e.target.getAttribute('id') == 'list-character') {
         lastDragItem = e.target;
+        lastDragItem.append(dragItem);
     }
     else {
-        lastDragItem = e.target.parentNode;
+        e.target.before(dragItem);
     }
-    lastDragItem.append(dragItem);
+
     dragItem.opacity = '0.5';
 }
