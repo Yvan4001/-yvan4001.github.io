@@ -1,5 +1,6 @@
-let items = document.querySelectorAll('.tier-row');
+let items = document.querySelectorAll('.tier');
 let images = document.querySelectorAll('img');
+let img = document.createElement('img');
 
 images.forEach(img =>
 {
@@ -13,17 +14,21 @@ let i = document.querySelector('.tier');
 i.append(tempDragItem);
 tempDragItem.setAttribute('draggable', true);
 
-items.forEach(item =>
+items.forEach(item => {
+    item.addEventListener('dragover', function (e) { dragOver(e, item); });
+    item.addEventListener('dragleave', function (e) { dragLeave(e, item); });
+});
+
+images.forEach(item =>
 {
     item.addEventListener('dragstart', function (e){ dragStart(e, item); });
-    item.addEventListener('dragover', function (e){ dragOver(e, item); });
-    item.addEventListener('dragleave', function (e){dragLeave(e, item); });
     item.addEventListener('dragend', function(e){ dragEnd(e, item); });
 });
 
 function dragStart(e, item)
 { 
     dragItem = e.target;
+    console.log(item);
     item.parentElement.appendChild(tempDragItem);
 }
 
@@ -44,11 +49,14 @@ function dragEnd(e, item)
 function dragOver(e, item)
 {
     lastDragItem = e.target;
-    e.target.style.backgroundColor = 'red';
+    img.src = dragItem.getAttribute('src');
+    img.opacity = '0.5';
+    e.target.appendChild(img);
 }
 
 
 function dragLeave(e, item)
 { 
     e.target.style.backgroundColor = '';
+    img.src = '';
 }
