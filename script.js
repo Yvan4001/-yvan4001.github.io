@@ -1,5 +1,4 @@
-let items = document.querySelectorAll('#tier-row');
-
+let items = document.querySelectorAll('.tier-row');
 let images = document.querySelectorAll('img');
 
 images.forEach(img =>
@@ -16,10 +15,10 @@ tempDragItem.setAttribute('draggable', true);
 
 items.forEach(item =>
 {
-    item.addEventListener('dragstart', dragStart(e));
-    item.addEventListener('dragend', dragEnd(e));
-    item.addEventListener('dragover', dragOver(e));
-    item.addEventListener('dragleave', dragLeave(e));
+    item.addEventListener('dragstart', function (e){ dragStart(e) ;});
+    item.addEventListener('dragend', function(e){ dragEnd(e); });
+    item.addEventListener('dragover', function(e){ dragOver(e); });
+    item.addEventListener('dragleave', function(e){ dragLeave(e); });
 });
 
 function dragStart(e)
